@@ -43,13 +43,13 @@
   background: none;
   border: none;
   font-weight: bold;
-  color: #0F4C81;
+  color: #5684AE;
   font-size: 1.2em;
   cursor: pointer;
 }
 
 .react-calendar__year-view__months__month button {
-  color: #0F4C81;
+  color: #5684AE;
   height: fit-content;
   width: fit-content;
 }
@@ -83,6 +83,12 @@
 
 .react-calendar__tile--now {
   background: #5684AE;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-calendar__tile--now:hover {
+  background: #FFE4C8;
   color: white;
   border-radius: 50%;
 }

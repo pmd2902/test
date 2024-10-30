@@ -1,6 +1,10 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+import dayjs from "dayjs";
 import "./UpcomingEvents.css";
-const UpcomingEvents = () => {
+import { upcomingEventsData } from "../../Data/UpcomingEventsData";
+import VideoCallIcon from "../../Assets/video.png";
+
+const UpcomingEvents = ({ date }) => {
   return (
     <div className="upcoming-events">
       <div className="header">
@@ -10,27 +14,39 @@ const UpcomingEvents = () => {
         </button>
       </div>
       <div className="sub-title">
-        <span>Today, 4 April</span>
+        <span>Today, {dayjs(date).format("D MMM")}</span>
       </div>
-      <div className="event">
-        <div className="event-header">
-          <p className="event-title">First Session with Alex Stan</p>
-          <button className="event-button"><icon /></button>
-        </div>
-        <p className="event-time">9:00 AM - 9:30 AM GMT+8</p>
-        <a href="#" className="event-link">
-          View Client Profile
-        </a>
-      </div>
-      {/* <div className="event">
-        <p className="event-title">
-          Webinar: How to cope with trauma in professional life
-        </p>
-        <p className="event-time">9:00 AM - 10:00 AM GMT+8</p>
-        <a href="#" className="event-link">
-          View Client Profile
-        </a>
-      </div> */}
+      {upcomingEventsData
+        .filter(
+          (event) =>
+            dayjs(event.start).format("YYYY-MM-DD") ===
+            dayjs(date).format("YYYY-MM-DD")
+        )
+        .map((event) => (
+          <div className="event">
+            <div className="event-header">
+              <p className="event-title">{event.title}</p>
+              <button className="event-button">
+                <img src={VideoCallIcon} alt="video-call" />
+              </button>
+            </div>
+            <p className="event-time">
+              {dayjs(event.start).format("h:mm A DD/MM/YYYY")} -{" "}
+              {dayjs(event.end).format("h:mm A DD/MM/YYYY")}
+            </p>
+            {event.resource.account && (
+              <div className="event-account">
+                <img
+                  src={event.resource.account.avatar}
+                  className="event-avatar"
+                />
+                <a href="#" className="event-link">
+                  View Client Profile
+                </a>
+              </div>
+            )}
+          </div>
+        ))}
     </div>
   );
 };

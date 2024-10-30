@@ -1,0 +1,85 @@
+.rbc-calendar {
+  background-color: #ffffff; 
+  font-family: Arial, sans-serif;
+  height: 75vh;
+}
+
+.rbc-day-bg {
+  background-color: #f4fafa; 
+  border: none;
+}
+
+.rbc-day-bg:nth-child(7n + 1) {
+  background-color: #ffffff; 
+}
+
+.rbc-date-cell {
+  text-align: center;
+}
+
+.rbc-month-row {
+  height: 100%;
+}
+
+.rbc-off-range-bg {
+  background-color: #fafafa;
+  color: #b0bec5;
+}
+
+.rbc-today {
+  background-color: #dff3f4; 
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+/* Ngày được chọn */
+.rbc-selected {
+  background-color: #9bd7e3 !important;
+  color: #ffffff;
+}
+
+.rbc-event {
+  background-color: #fdcb6e; 
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 0.9em;
+  margin: 2px 0;
+}
+
+.rbc-event-label {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+.rbc-event-content {
+  font-size: 0.85em;
+}
+
+.rbc-toolbar {
+  background-color: #ffffff;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #34495e;
+}
+
+.rbc-toolbar button {
+  background-color: #58a6ff;
+  color: #ffffff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.rbc-toolbar button:hover {
+  background-color: #007bff;
+}
+
+.rbc-toolbar-label {
+  font-size: 1.3em;
+  color: #34495e;
+}

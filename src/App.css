@@ -1,14 +1,34 @@
+/* Đặt cấu trúc của container */
 .container {
   height: 100vh;
   width: 100vw;
   background-color: #dcf8f5;
   display: flex;
   justify-content: center;
+  align-items: start;
+  padding: 20px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ để tạo chiều sâu */
+  border-radius: 8px; /* Bo góc cho container */
 }
 
-.sidebar{
+/* Sidebar */
+.sidebar {
   width: 20%;
-  border: 2px solid #f0eeee;
   background-color: #ffffff;
+  border: 1px solid #f0eeee;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
 }
 
+/* Content */
+.content {
+  width: 50%;
+  height: fit-content;
+  background-color: #ffffff;
+  border-radius: 8px;
+  margin-left: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
