@@ -1,24 +1,33 @@
 .rbc-calendar {
-  background-color: #ffffff; 
+  background-color: #ffffff;
   font-family: Arial, sans-serif;
   height: 75vh;
 }
 
 .rbc-day-bg {
-  background-color: #f4fafa; 
+  background-color: #ffffff;
   border: none;
 }
 
-.rbc-day-bg:nth-child(7n + 1) {
-  background-color: #ffffff; 
+.rbc-day-bg:hover {
+  background-color: #ace5f7;
+  border: 1px solid #3972CF;
+  cursor: pointer;
 }
 
 .rbc-date-cell {
   text-align: center;
+  margin-top: 10px;
+  position: relative;
 }
 
 .rbc-month-row {
   height: 100%;
+}
+
+.rcb-current {
+  width: 20px;
+  padding: 0;
 }
 
 .rbc-off-range-bg {
@@ -26,21 +35,18 @@
   color: #b0bec5;
 }
 
-.rbc-today {
-  background-color: #dff3f4; 
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-}
 
-/* Ngày được chọn */
 .rbc-selected {
   background-color: #9bd7e3 !important;
   color: #ffffff;
 }
 
+.rbc-today{
+  background-color: #d8f3f8 !important;
+}
+
 .rbc-event {
-  background-color: #fdcb6e; 
+  background-color: #fdcb6e;
   color: #ffffff;
   border-radius: 4px;
   padding: 5px;
@@ -81,5 +87,141 @@
 
 .rbc-toolbar-label {
   font-size: 1.3em;
-  color: #34495e;
+  font-weight: bold;
+  color: #0f4b7d;
+  text-align: start !important;
+}
+
+.rbc-btn-group button:nth-child(1) {
+  background-color: #ffffff;
+  color: #3972CF;
+  border: 1px solid #3972CF;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 0.8em;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.rbc-btn-group button:nth-child(2) {
+  background-color: #ffffff;
+  color: #3972CF;
+  border-radius: 50%;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rbc-btn-group>button:first-child:not(:last-child) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.rbc-btn-group>button:not(:first-child):not(:last-child) {
+  border-radius: 50%;
+}
+
+.rbc-btn-group>button:last-child:not(:first-child) {
+  border-radius: 50%;
+}
+
+.rbc-btn-group button:nth-child(2)::before {
+  content: "<";
+  font-weight: bold;
+  font-size: 16px;
+  color: #3972CF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rbc-active{
+  background-color: #80a6e4 !important;
+}
+
+.rbc-btn-group button:nth-child(3) {
+  background-color: #ffffff;
+  color: #3972CF;
+  border-radius: 50%;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rbc-btn-group button:nth-child(3)::before {
+  content: ">";
+  font-weight: bold;
+  font-size: 16px;
+  color: #3972CF;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.rbc-btn-group button:hover {
+  background-color: #3972CF;
+  color: #ffffff;
+}
+
+.rbc-btn-group button:nth-child(2):hover::before,
+.rbc-btn-group button:nth-child(3):hover::before {
+  color: #ffffff;
+}
+
+
+
+.rbc-toolbar .rbc-btn-group:last-child {
+  display: flex;
+  gap: 0;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button {
+  background-color: #5582ab;
+  color: #fff;
+  padding: 5px 15px;
+  font-size: 0.8em;
+  font-weight: lighter;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(2)::before,
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(3)::before {
+  content: "";
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(1) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(2),
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(3) {
+  width: fit-content;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:nth-child(2) {
+  border-radius: 0;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:last-child {
+  border: 1px solid #3972CF;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.rbc-toolbar .rbc-btn-group:last-child button:hover {
+  background-color: #6a9ecc;
+  color: #ffffff;
 }

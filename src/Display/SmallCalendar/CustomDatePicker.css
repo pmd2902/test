@@ -82,8 +82,8 @@
 }
 
 .react-calendar__tile--now {
-  background: #5684AE;
-  color: white;
+  background: #FFE4C8;
+  color: #333;
   border-radius: 50%;
 }
 
@@ -94,8 +94,8 @@
 }
 
 .react-calendar__tile--active {
-  background: #FFE4C8;
-  color: #333;
+  background: #5684AE;
+  color: #fff;
   border-radius: 50%;
   padding: 10px;
 }
