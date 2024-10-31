@@ -10,8 +10,8 @@
 }
 
 .rbc-day-bg:hover {
-  background-color: #ace5f7;
-  border: 1px solid #3972CF;
+  background-color: #ace5f7 !important;
+  border: 1px solid #648ccc;
   cursor: pointer;
 }
 
@@ -35,23 +35,43 @@
   color: #b0bec5;
 }
 
-
 .rbc-selected {
   background-color: #9bd7e3 !important;
   color: #ffffff;
 }
 
-.rbc-today{
-  background-color: #d8f3f8 !important;
+.rbc-today {
+  background-color: #FFE4C8 !important;
 }
 
 .rbc-event {
-  background-color: #fdcb6e;
-  color: #ffffff;
-  border-radius: 4px;
-  padding: 5px;
-  font-size: 0.9em;
-  margin: 2px 0;
+  background-color: #ffe0b2;
+  color: #5d4037;
+  border-radius: 8px;
+  padding: 6px 10px 6px 20px;
+  font-size: 0.85em;
+  margin: 4px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+
+.rbc-event::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background-color: #0f4b7d;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.rbc-event:hover {
+  background-color: #ffd180;
 }
 
 .rbc-event-label {
@@ -94,8 +114,8 @@
 
 .rbc-btn-group button:nth-child(1) {
   background-color: #ffffff;
-  color: #3972CF;
-  border: 1px solid #3972CF;
+  color: #3972cf;
+  border: 1px solid #3972cf;
   border-radius: 20px;
   padding: 5px 15px;
   font-size: 0.8em;
@@ -105,7 +125,7 @@
 
 .rbc-btn-group button:nth-child(2) {
   background-color: #ffffff;
-  color: #3972CF;
+  color: #3972cf;
   border-radius: 50%;
   padding: 5px;
   width: 32px;
@@ -116,16 +136,16 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.rbc-btn-group>button:first-child:not(:last-child) {
+.rbc-btn-group > button:first-child:not(:last-child) {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
 }
 
-.rbc-btn-group>button:not(:first-child):not(:last-child) {
+.rbc-btn-group > button:not(:first-child):not(:last-child) {
   border-radius: 50%;
 }
 
-.rbc-btn-group>button:last-child:not(:first-child) {
+.rbc-btn-group > button:last-child:not(:first-child) {
   border-radius: 50%;
 }
 
@@ -133,20 +153,20 @@
   content: "<";
   font-weight: bold;
   font-size: 16px;
-  color: #3972CF;
+  color: #3972cf;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.rbc-active{
+.rbc-active {
   background-color: #80a6e4 !important;
 }
 
 .rbc-btn-group button:nth-child(3) {
   background-color: #ffffff;
-  color: #3972CF;
+  color: #3972cf;
   border-radius: 50%;
   padding: 5px;
   width: 32px;
@@ -161,7 +181,7 @@
   content: ">";
   font-weight: bold;
   font-size: 16px;
-  color: #3972CF;
+  color: #3972cf;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -169,7 +189,7 @@
 }
 
 .rbc-btn-group button:hover {
-  background-color: #3972CF;
+  background-color: #3972cf;
   color: #ffffff;
 }
 
@@ -177,8 +197,6 @@
 .rbc-btn-group button:nth-child(3):hover::before {
   color: #ffffff;
 }
-
-
 
 .rbc-toolbar .rbc-btn-group:last-child {
   display: flex;
@@ -204,6 +222,7 @@
 .rbc-toolbar .rbc-btn-group:last-child button:nth-child(1) {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
+  border: none;
 }
 
 .rbc-toolbar .rbc-btn-group:last-child button:nth-child(2),
@@ -216,7 +235,7 @@
 }
 
 .rbc-toolbar .rbc-btn-group:last-child button:last-child {
-  border: 1px solid #3972CF;
+  /* border: 1px solid #3972CF; */
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }

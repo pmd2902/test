@@ -1,0 +1,20 @@
+.information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.avatar {
+  width: 60%;
+}
+
+.name {
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.address,
+.phoneNumber {
+  font-size: 18px;
+}

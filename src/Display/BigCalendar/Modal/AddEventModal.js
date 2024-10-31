@@ -68,7 +68,9 @@ const AddEventsModal = ({
                         type="text"
                         className="form-control-lg form-control"
                         placeholder="Enter..."
-                        value={dayjs(formData.start).format("DD/MM/YYYY")}
+                        value={dayjs(formData.start).format(
+                          "hh:mm A DD/MM/YYYY"
+                        )}
                         disabled
                       />
                     </div>
@@ -86,14 +88,14 @@ const AddEventsModal = ({
                         type="text"
                         className="form-control-lg form-control"
                         placeholder="Enter..."
-                        value={dayjs(formData.end).subtract(1, 'day').format("DD/MM/YYYY")}
+                        value={dayjs(formData.end).format("hh:mm A DD/MM/YYYY")}
                         disabled
                       />
                     </div>
                   </div>
                 </div>
               </Col>
-              <Col md={formData?.info?.type === "appointment" ? "6" : "12"}>
+              <Col md={formData?.type === "appointment" ? "6" : "12"}>
                 <div className="form-group">
                   <div className="form-label-group">
                     <label className="form-label" htmlFor="default-03">
@@ -107,16 +109,13 @@ const AddEventsModal = ({
                         onChange={(e) =>
                           setFormData({
                             ...formData,
-                            info: {
-                              ...formData.info,
-                              type: e.value,
-                            },
+                            type: e.value,
                           })
                         }
                         value={
-                          (formData.info &&
+                          (formData.type &&
                             options.find(
-                              (option) => option.value === formData.info.type
+                              (option) => option.value === formData.type
                             )) ||
                           null
                         }
@@ -126,12 +125,12 @@ const AddEventsModal = ({
                   </div>
                 </div>
               </Col>
-              {formData?.info?.type === "appointment" && (
+              {formData?.type === "appointment" && (
                 <Col md="6">
                   <div className="form-group">
                     <div className="form-label-group">
                       <label className="form-label" htmlFor="default-03">
-                        Account
+                        Client
                       </label>
                       <div className="form-control-wrap">
                         <Select
@@ -144,19 +143,16 @@ const AddEventsModal = ({
                           onChange={(e) =>
                             setFormData({
                               ...formData,
-                              info: {
-                                ...formData.info,
-                                account: AccountData.find(
-                                  (account) => account.id === e.value
-                                ),
-                              },
+                              account: AccountData.find(
+                                (account) => account.id === e.value
+                              ),
                             })
                           }
                           value={
-                            formData.info && formData.info.account
+                            formData.account
                               ? {
-                                  value: formData.info.account.id,
-                                  label: formData.info.account.name,
+                                  value: formData.account.id,
+                                  label: formData.account.name,
                                 }
                               : null
                           }
@@ -171,7 +167,7 @@ const AddEventsModal = ({
                 <ul className="action-buttons">
                   <li>
                     <Button color="primary" type="submit">
-                      Do Something
+                      Confirm
                     </Button>
                   </li>
                   <li>
